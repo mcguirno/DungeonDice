@@ -41,7 +41,7 @@ struct ContentView: View {
             
             Spacer()
             
-            Group {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100, maximum: 102))]) {
                 ForEach(Dice.allCases, id: \.self) { die in
                     Button("\(die.rawValue)-sided") {
                         resultMessage = "You Rolled a \(die.roll()) on a \(die.rawValue)-sided die"
